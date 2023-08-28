@@ -37,5 +37,5 @@ Feature: Articles
     And params {limit:10, offset:0, author:'DemoTest'}
     When method Get
     Then status 200
-    And match response.articles[0].title != 'Delete Article'
+    And match response.articles == '#[0]'
     

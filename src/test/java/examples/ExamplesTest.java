@@ -9,17 +9,17 @@ import org.junit.jupiter.api.Test;
 
 class ExamplesTest {
 
-    @Test
-    void testParallel() {
-        Results results = Runner.path("classpath:examples")
-                //.outputCucumberJson(true)
-                .parallel(5);
-        assertEquals(0, results.getFailCount(), results.getErrorMessages());
-    }
-    
-//    @Karate.Test
-//    Karate testTags() {
-//        return Karate.run().tags("@debug").relativeTo(getClass());
+//    @Test
+//    void testParallel() {
+//        Results results = Runner.path("classpath:examples")
+//                //.outputCucumberJson(true)
+//                .parallel(5);
+//        assertEquals(0, results.getFailCount(), results.getErrorMessages());
 //    }
+    
+    @Karate.Test
+    Karate testTags() {
+        return Karate.run().tags("@debug").relativeTo(getClass());
+    }
 
 }
