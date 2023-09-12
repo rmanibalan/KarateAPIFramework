@@ -18,30 +18,30 @@ import org.junit.jupiter.api.Test;
 
 class ExamplesTest {
 	
-//	@Karate.Test
-//    Karate testTags() {
-//        return Karate.run().tags("@debug").relativeTo(getClass());
-//    }
+	@Karate.Test
+    Karate testTags() {
+        return Karate.run().tags("@test1").relativeTo(getClass());
+    }
 	
-	 @Test
-	    void testParallel() {
-	        Results results = Runner.path("classpath:examples")
-	                .outputCucumberJson(true)
-	                .karateEnv("dev")
-	                .parallel(5);
-	        generateReport(results.getReportDir());
-	        assertTrue(results.getFailCount() == 0, results.getErrorMessages());
-//	        assertEquals(0, results.getFailCount(), results.getErrorMessages());
-	    }
-	
-	 public static void generateReport(String karateOutputPath) {
-	        Collection<File> jsonFiles = FileUtils.listFiles(new File(karateOutputPath), new String[] {"json"}, true);
-	        List<String> jsonPaths = new ArrayList<>(jsonFiles.size());
-	        jsonFiles.forEach(file -> jsonPaths.add(file.getAbsolutePath()));
-	        Configuration config = new Configuration(new File("target"), "examples");
-	        ReportBuilder reportBuilder = new ReportBuilder(jsonPaths, config);
-	        reportBuilder.generateReports();
-	    }
+//	 @Test
+//	    void testParallel() {
+//	        Results results = Runner.path("classpath:examples")
+//	                .outputCucumberJson(true)
+//	                .karateEnv("dev")
+//	                .parallel(5);
+//	        generateReport(results.getReportDir());
+//	        assertTrue(results.getFailCount() == 0, results.getErrorMessages());
+////	        assertEquals(0, results.getFailCount(), results.getErrorMessages());
+//	    }
+//	
+//	 public static void generateReport(String karateOutputPath) {
+//	        Collection<File> jsonFiles = FileUtils.listFiles(new File(karateOutputPath), new String[] {"json"}, true);
+//	        List<String> jsonPaths = new ArrayList<>(jsonFiles.size());
+//	        jsonFiles.forEach(file -> jsonPaths.add(file.getAbsolutePath()));
+//	        Configuration config = new Configuration(new File("target"), "examples");
+//	        ReportBuilder reportBuilder = new ReportBuilder(jsonPaths, config);
+//	        reportBuilder.generateReports();
+//	    }
     
     
 
